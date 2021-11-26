@@ -1,0 +1,25 @@
+.inputButton {
+    display: flex;
+    flex-direction: row;
+    margin:10px;
+}
+
+.newsletter {
+    height: 250px;
+    width: 450px;
+    background-color: rgb(77, 77, 77);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    color:white;
+}
+
+.p2 {
+    color:gray;
+    font-style: italic;
+}
