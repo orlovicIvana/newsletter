@@ -3,26 +3,33 @@ import Heading from '../Heading';
 import Button from '../Button';
 import Input from '../Input';
 import './newsletter.css';
-import { } from '../../api';
+import axios from 'axios';
 
 const Newsletter = () => {
     const [inputValue, setInputValue] = useState("");
+    const [disable, setDisable] = useState(false);
 
-    const handleOnClick = (e) => {
+    const onSubmit = async (e) => {
+        e.preventDefault();
 
-        console.log(inputValue);
+        if (inputValue !== '') {
+
+            const res = await axios.post('http://192.168.100.103:1337/api/subscribe', { email: inputValue });
+            console.log(res.data);
+        }
+
     };
 
     return (
         <div className="newsletter">
             <Heading title="Newsletter" />
             <p>Stay up to date with our latest news and products.</p>
-            <div className="inputButton">
-                <Input type="text" placeholder="Your email address" onChange={(e) => setInputValue(e.target.value)} />
-                <Button title="SUBSCRIBE" handleOnClick={handleOnClick} />
-            </div>
+            <form onSubmit={onSubmit}>
+                <Input type="email" placeholder="Your email address" onChange={(e) => setInputValue(e.target.value)} value={inputValue} />
+                <Button title="SUBSCRIBE" disabled={disable} />
+            </form>
             <p className="p2">Your email is safe with us, we don't spam.</p>
-        </div>
+        </div >
     );
 };
 
