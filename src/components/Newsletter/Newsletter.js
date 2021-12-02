@@ -4,6 +4,8 @@ import Button from '../Button';
 import Input from '../Input';
 import './newsletter.css';
 import axios from 'axios';
+import letter from './letter.png';
+import { IoIosCloseCircleOutline } from 'react-icons/io';
 
 const Newsletter = () => {
     const [disable, setDisable] = useState(false);
@@ -32,6 +34,10 @@ const Newsletter = () => {
 
     return (
         <div className="newsletter">
+            <div className="closeButton" >
+                <IoIosCloseCircleOutline fontSize='2rem' color='gray' />
+            </div>
+            <img src={letter} alt="Letter" />
             <Heading title="Newsletter" />
             <p>Stay up to date with our latest news and products.</p>
             <form method="POST" onSubmit={onSubmit}>

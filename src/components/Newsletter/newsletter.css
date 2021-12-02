@@ -5,8 +5,14 @@ form {
 }
 
 .newsletter {
+    position:absolute;
     height: 250px;
     width: 450px;
+    margin: 0 auto;
+    top:50%;
+    left:50%;
+    margin-left: -225px;
+    margin-top:-125px;
     background-color: rgb(77, 77, 77);
     border-radius: 20px;
     display: flex;
@@ -22,4 +28,19 @@ p {
 .p2 {
     color:gray;
     font-style: italic;
+}
+
+img {
+    position:absolute;
+    display:flex;
+    top: -35px;
+    height:70px;
+    width:70px;
+    border-radius: 50%;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
 }
